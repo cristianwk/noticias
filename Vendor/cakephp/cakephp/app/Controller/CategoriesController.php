@@ -34,7 +34,7 @@ class CategoriesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Category->exists($id)) {
-			throw new NotFoundException(__('Invalid category'));
+			throw new NotFoundException(__('Categoria Invalida'));
 		}
 		$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
 		$this->set('category', $this->Category->find('first', $options));
@@ -49,10 +49,10 @@ class CategoriesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
-				$this->Flash->success(__('The category has been saved.'));
+				$this->Flash->success(__('Categoria Salva com Sucesso!'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The category could not be saved. Please, try again.'));
+				$this->Flash->error(__('A categoria não pôde ser salva. Por favor, tente novamente.'));
 			}
 		}
 	}
@@ -66,14 +66,14 @@ class CategoriesController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->Category->exists($id)) {
-			throw new NotFoundException(__('Invalid category'));
+			throw new NotFoundException(__('Categoria Inválida'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Category->save($this->request->data)) {
-				$this->Flash->success(__('The category has been saved.'));
+				$this->Flash->success(__('Categoria Salva com Sucesso!'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The category could not be saved. Please, try again.'));
+				$this->Flash->error(__('A categoria não pôde ser salva. Por favor, tente novamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
@@ -90,13 +90,13 @@ class CategoriesController extends AppController {
  */
 	public function delete($id = null) {
 		if (!$this->Category->exists($id)) {
-			throw new NotFoundException(__('Invalid category'));
+			throw new NotFoundException(__('Categoria Inválida!'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Category->delete($id)) {
-			$this->Flash->success(__('The category has been deleted.'));
+			$this->Flash->success(__('Categoria excluída com sucesso.'));
 		} else {
-			$this->Flash->error(__('The category could not be deleted. Please, try again.'));
+			$this->Flash->error(__('A categoria não pôde ser excluída. Por favor, tente novamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

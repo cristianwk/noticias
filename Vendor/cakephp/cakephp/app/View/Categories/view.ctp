@@ -1,5 +1,5 @@
 <div class="categories view">
-<h2><?php echo __('Category'); ?></h2>
+<h2><?php echo __('Categoria'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
@@ -24,7 +24,7 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Ações'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit Category'), array('action' => 'edit', $category['Category']['id'])); ?> </li>
 		<li><?php echo $this->Form->postLink(__('Delete Category'), array('action' => 'delete', $category['Category']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $category['Category']['id']))); ?> </li>
@@ -67,7 +67,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New News'), array('controller' => 'news', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nova Dica'), array('controller' => 'news', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

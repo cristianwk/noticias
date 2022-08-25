@@ -1,5 +1,5 @@
 <div class="news index">
-	<h2><?php echo __('News'); ?></h2>
+	<h2><?php echo __('Dicas'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
@@ -47,10 +47,10 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Ações'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New News'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nova Dica'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Categoria'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nova Categoria'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

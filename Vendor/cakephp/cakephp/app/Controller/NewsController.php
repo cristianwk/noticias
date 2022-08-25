@@ -49,10 +49,10 @@ class NewsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->News->create();
 			if ($this->News->save($this->request->data)) {
-				$this->Flash->success(__('The news has been saved.'));
+				$this->Flash->success(__('Dica Salva com Sucesso!'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The news could not be saved. Please, try again.'));
+				$this->Flash->error(__('A Dica não pôde ser salva. Por favor, tente novamente.'));
 			}
 		}
 		$categories = $this->News->Category->find('list');
@@ -68,14 +68,14 @@ class NewsController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$this->News->exists($id)) {
-			throw new NotFoundException(__('Invalid news'));
+			throw new NotFoundException(__('Dica Inválida'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->News->save($this->request->data)) {
-				$this->Flash->success(__('The news has been saved.'));
+				$this->Flash->success(__('Dica Salva com Sucesso!'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The news could not be saved. Please, try again.'));
+				$this->Flash->error(__('A Dica não pôde ser salva. Por favor, tente novamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('News.' . $this->News->primaryKey => $id));
@@ -94,13 +94,13 @@ class NewsController extends AppController {
  */
 	public function delete($id = null) {
 		if (!$this->News->exists($id)) {
-			throw new NotFoundException(__('Invalid news'));
+			throw new NotFoundException(__('Dica Inválida'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->News->delete($id)) {
-			$this->Flash->success(__('The news has been deleted.'));
+			$this->Flash->success(__('Dica excluída com sucesso.'));
 		} else {
-			$this->Flash->error(__('The news could not be deleted. Please, try again.'));
+			$this->Flash->error(__('A Dica não pôde ser excluída. Por favor, tente novamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
